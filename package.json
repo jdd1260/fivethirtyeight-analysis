@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "repository": "",
   "author": "Joel Detweiler",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bluebird": "^3.5.1",
