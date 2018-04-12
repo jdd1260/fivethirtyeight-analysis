@@ -19,7 +19,9 @@ function scrape() {
 function analyze(results) {
     const data = results || JSON.parse(fs.readFileSync('results.json', 'utf8'));
     const averages = monthlyAverages(data);
-    toCsv(averages, 'results.csv');
+    toCsv(averages, 'results.csv', false);
 }
 
 scrape().then(analyze);
+
+//analyze();

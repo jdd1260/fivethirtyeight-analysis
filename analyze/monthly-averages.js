@@ -3,7 +3,7 @@ const moment = require('moment')
 
 
 function averageByMonth(articles) {
-    const monthlyData = _.groupBy(articles, article => moment(article.date, 'MM/DD/YYYY').format('YYYYMM'));
+    const monthlyData = _.groupBy(articles.filter(_.identity), article => moment(article.date, 'MM/DD/YYYY').format('YYYYMM'));
     const averages = _.map(monthlyData, (articles, dateString) => ({
     	wordCount: _.meanBy(articles, 'wordCount').toFixed(2),
     	characterCount: _.meanBy(articles, 'characterCount').toFixed(2),
