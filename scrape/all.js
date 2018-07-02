@@ -18,6 +18,8 @@ async function scrapeAll() {
     let index = 1;
     do {
         lastResults = await processPage(index);
+        // try to prevent being throttled due to too many http requests
+        Promise.delay(250); 
         allResults = allResults.concat(lastResults);
         index++;
     } while (lastResults.length > 0);
